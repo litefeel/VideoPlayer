@@ -1,0 +1,3 @@
+[submodule "lite3lib"]
+	path = lite3lib
+	url = git@github.com:lite3/lite3lib.git

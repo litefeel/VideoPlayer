@@ -16,7 +16,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="D:\GitHub\lite3lib\src" />
+    <class path="lite3lib\src" />
   </classpaths>
   <!-- Build options -->
   <build>
