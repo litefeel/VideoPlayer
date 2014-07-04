@@ -61,7 +61,7 @@ package com.litefeel.videoPlayer.core
 			_configData.endAd = xml.end_ad.url;
 			if (_configData.endAd) _configData.endAd = encodeURI(_configData.endAd);
 			_configData.endAdTime = xml.end_ad.time;
-			_configData.prevConfig = xml.up_mv;
+			_configData.prevConfig = xml.prev_mv;
 			_configData.nextConfig = xml.next_mv;
 			var len:int = xml.mv.item.length();
 			_configData.moveList = new Vector.<String>(len);
