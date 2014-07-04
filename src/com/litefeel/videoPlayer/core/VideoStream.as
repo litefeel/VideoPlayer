@@ -36,17 +36,19 @@ package com.litefeel.videoPlayer.core
 		
 		private var autoPlay:Boolean = false;
 		private var isStarted:Boolean = false;
+		private var virtualClips:Boolean = false;
 		
 		private var url:String = null;
 		
 		private var nc:NetConnection;
 		private var ns:NetStream;
 		
-		public function VideoStream(url:String, autoPlay:Boolean = false, totalTime:Number = -1) 
+		public function VideoStream(url:String, autoPlay:Boolean = false, totalTime:Number = -1, virtualClips:Boolean = false) 
 		{
 			_totalTime = totalTime;
 			this.url = url;
 			this.autoPlay = autoPlay;
+			this.virtualClips = false;
 			nc = new NetConnection();
 			nc.connect(null);
 			ns = new NetStream(nc);
@@ -135,8 +137,10 @@ package com.litefeel.videoPlayer.core
 					_loadComplete = false;
 					isStarted = false;
 					dispatchEvent(new VideoStreamEvent(VideoStreamEvent.BUFFER_BEGIN));
-					ns.play(url + "?start=" + playTime);
-					trace("play url ", url + "?start=" + playTime);
+					
+					var nowUrl:String = virtualClips ? (url + "?star=" + playTime) : url
+					ns.play(nowUrl);
+					trace("play url ", nowUrl);
 				}
 			}
 		}

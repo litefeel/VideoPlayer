@@ -6,6 +6,7 @@ package com.litefeel.videoPlayer.core
 	 */
 	public class ConfigData
 	{
+		public var virtualClips:Boolean = false;
 		public var logo:String = null;
 		public var startAd:String = null;
 		public var startAdTime:int = 0;

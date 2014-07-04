@@ -52,6 +52,7 @@ package com.litefeel.videoPlayer.core
 		private var _initialized:Boolean;
 		private var _isPlaying:Boolean = false;
 		private var _isStreamComplete:Boolean = false;
+		private var virtualClips:Boolean = false;
 		
 		
 		public function getCurStream():VideoStream
@@ -72,9 +73,9 @@ package com.litefeel.videoPlayer.core
 			soundTransform = new SoundTransform(0.5);
 		}
 		
-		public function initList(list:Vector.<String>):void
+		public function initList(list:Vector.<String>, virtualClips:Boolean):void
 		{
-			
+			this.virtualClips = virtualClips;
 			urlList = list.concat();
 			timeTest = new StreamTimeTest(list.concat());
 			timeTest.addEventListener(Event.COMPLETE, timeTestCompleteHandler);
@@ -279,7 +280,7 @@ package com.litefeel.videoPlayer.core
 		{
 			if (!streamList[idx])
 			{
-				streamList[idx] = new VideoStream(urlList[idx], false, timeList[idx]);
+				streamList[idx] = new VideoStream(urlList[idx], false, timeList[idx], virtualClips);
 				streamList[idx].addEventListener(VideoStreamEvent.LOAD_COMPLETE, streamHandler);
 				streamList[idx].addEventListener(VideoStreamEvent.PLAY_COMPLETE, streamHandler);
 				streamList[idx].addEventListener(VideoStreamEvent.BUFFER_BEGIN, streamHandler);

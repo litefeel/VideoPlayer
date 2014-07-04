@@ -108,7 +108,7 @@ package com.litefeel.videoPlayer
 				}
 				
 				streamManager = new StreamManager();
-				streamManager.initList(config.configData.moveList);
+				streamManager.initList(config.configData.moveList, config.configData.virtualClips);
 				streamManager.addEventListener(VideoStreamEvent.INIT, streamManagerHandler);
 				streamManager.addEventListener(VideoStreamEvent.BUFFER_BEGIN, streamManagerHandler);
 				streamManager.addEventListener(VideoStreamEvent.BUFFER_END, streamManagerHandler);
@@ -160,7 +160,7 @@ package com.litefeel.videoPlayer
 						controlBar.setEnabled(false);
 					}
 				}
-				video.attachNetStream(streamManager.getCurStream().getNetStream());
+				//video.attachNetStream(streamManager.getCurStream().getNetStream());
 				break;
 				
 				case VideoStreamEvent.STREAM_CHANGE :

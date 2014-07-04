@@ -52,14 +52,15 @@ package com.litefeel.videoPlayer.core
 			
 			if (!_configData) _configData = new ConfigData();
 			_configData.logo = xml.logo;
+			_configData.virtualClips = "true" == xml.virtual_clips || "1" == xml.virtual_clips;
 			_configData.startAd = xml.start_ad.url;
-			if (_configData.startAd) _configData.startAd = encodeURI(_configData.startAd);
+			//if (_configData.startAd) _configData.startAd = encodeURI(_configData.startAd);
 			_configData.startAdTime = xml.start_ad.time;
 			_configData.midAd = xml.mid_ad.url;
-			if (_configData.midAd) _configData.midAd = encodeURI(_configData.midAd);
+			//if (_configData.midAd) _configData.midAd = encodeURI(_configData.midAd);
 			_configData.midAdTime = xml.mid_ad.time;
 			_configData.endAd = xml.end_ad.url;
-			if (_configData.endAd) _configData.endAd = encodeURI(_configData.endAd);
+			//if (_configData.endAd) _configData.endAd = encodeURI(_configData.endAd);
 			_configData.endAdTime = xml.end_ad.time;
 			_configData.prevConfig = xml.prev_mv;
 			_configData.nextConfig = xml.next_mv;
@@ -68,7 +69,7 @@ package com.litefeel.videoPlayer.core
 			for (var i:int = 0; i < len; i++)
 			{
 				_configData.moveList[i] = xml.mv.item[i];
-				if (_configData.moveList[i]) _configData.moveList[i] = encodeURI(_configData.moveList[i]);
+				//if (_configData.moveList[i]) _configData.moveList[i] = encodeURI(_configData.moveList[i]);
 			}
 		}
 		
