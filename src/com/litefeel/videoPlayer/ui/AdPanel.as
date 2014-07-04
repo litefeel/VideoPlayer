@@ -83,22 +83,23 @@ package com.litefeel.videoPlayer.ui
 				timer.addEventListener(TimerEvent.TIMER, timerHandler);
 				timer.start();
 			}
-			switch(getFileType(url))
+			switch(AdFileType.getType(url))
 			{
-				case "image" :
+				case AdFileType.IMAGE :
 				image = new Loader();
 				image.load(new URLRequest(url));
 				image.contentLoaderInfo.addEventListener(Event.INIT, initHandler);
 				addChildAt(image, 0);
 				break;
 				
-				case "gif" :
+				case AdFileType.GIF :
 				gifPlayer = new GIFPlayer();
 				gifPlayer.addEventListener(GIFPlayerEvent.COMPLETE, initHandler);
 				gifPlayer.load(new URLRequest(url));
 				addChildAt(gifPlayer, 0);
 				break;
-				case "flv" :
+				
+				case AdFileType.VIDEO :
 				vs = new VideoStream(url, true);
 				vs.addEventListener(VideoStreamEvent.INIT, initHandler);
 				video.attachNetStream(vs.getNetStream());
