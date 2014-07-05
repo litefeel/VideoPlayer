@@ -15,11 +15,11 @@
         <time>3</time>
     </start_ad>
     <!-- 暂停时广告，格式同片头时广告 -->
-    <mid_ad>html/mad.mp4</mid_ad>
+    <mid_ad></mid_ad>
     <!-- 片尾时广告，格式同片头时广告 -->
     <end_ad />
     <!-- 上一个视频配置文件地址，可选项 -->
-    <prev_mv>prev_config.xml</prev_mv>
+    <prev_mv></prev_mv>
     <!-- 下一个视频配置文件地址，可选项 -->
     <next_mv>config2.xml</next_mv>
     <!-- 分段视频地址 -->
