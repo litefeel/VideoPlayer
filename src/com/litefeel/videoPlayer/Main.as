@@ -57,7 +57,10 @@ package com.litefeel.videoPlayer
 			this.contextMenu = MyContextMenu.getMyContextNenu();
 			initUI();
 			
-			loadConfig(null);
+			var url:String = stage.loaderInfo.parameters.config
+			if (!url) url = configURL;
+			
+			loadConfig(url);
 			
 			stage.addEventListener(Event.RESIZE, resizeHandler);
 			resizeHandler(null);
@@ -65,7 +68,7 @@ package com.litefeel.videoPlayer
 		
 		public function loadConfig(key:String):void
 		{
-			if (!key) key = configURL;
+			//if (!key) key = configURL;
 			video.visible = false;
 			controlBar.setEnabled(false);
 			controlBar.setTime(0, 0, 0);
