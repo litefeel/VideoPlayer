@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- 片头时广告，可选项-->
+    <start_ad>
+        <!-- 
+            片头广告的URL，支持的格式：
+            静态图片(jpg,gif,jpeg,png)
+            动态图片(gif)
+            视频格式(flv,f4v,mp4,m4v,m4a,mov,3gp)
+        -->
+        <url>html/sad.mp4</url>
+        <!-- 广告显示的时间 -->
+        <time>3</time>
+    </start_ad>
+    <!-- 暂停时广告，格式同片头时广告 -->
+    <mid_ad>html/mad.mp4</mid_ad>
+    <!-- 片尾时广告，格式同片头时广告 -->
+    <end_ad />
+    <!-- 上一个视频配置文件地址，可选项 -->
+    <prev_mv>config.xml</prev_mv>
+    <!-- 下一个视频配置文件地址，可选项 -->
+    <next_mv>next_config.xml</next_mv>
+    <!-- 分段视频地址 -->
+    <mv>
+		<item>html/变形金刚2/变形金刚2_008.m4v</item>
+		<item>html/变形金刚2/变形金刚2_009.m4v</item>
+		<item>html/变形金刚2/变形金刚2_010.m4v</item>
+		<item>html/变形金刚2/变形金刚2_011.m4v</item>
+		<item>html/变形金刚2/变形金刚2_012.m4v</item>
+		<item>html/变形金刚2/变形金刚2_013.m4v</item>
+		<item>html/变形金刚2/变形金刚2_014.m4v</item>
+		<item>html/变形金刚2/变形金刚2_015.m4v</item>
+    </mv>
+</config>
