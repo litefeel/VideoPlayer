@@ -35,6 +35,7 @@ package com.litefeel.videoPlayer
 		private var controlBar:ControlBar;
 		private var adPanel:AdPanel;
 		private var loading:Loading;
+		private var frontLayer:Sprite;
 		
 		private var video:Video;
 		
@@ -52,7 +53,8 @@ package com.litefeel.videoPlayer
 			// entry point
 			
 			StageUtil.setNoScaleAndTopLeft(stage);
-			contextMenu = MyContextMenu.getMyContextNenu();
+			stage.showDefaultContextMenu = true;
+			this.contextMenu = MyContextMenu.getMyContextNenu();
 			initUI();
 			
 			loadConfig(null);
@@ -192,6 +194,12 @@ package com.litefeel.videoPlayer
 		
 		private function initUI():void 
 		{
+			frontLayer = new Sprite();
+			frontLayer.mouseChildren = false;
+			frontLayer.graphics.beginFill(0, 0);
+			frontLayer.graphics.drawRect(0, 0, 100, 100);
+			frontLayer.graphics.endFill();
+			
 			adPanel = new AdPanel();
 			adPanel.addEventListener(Event.COMPLETE, adPanelCompleteHandler);
 			video = new Video();
@@ -208,10 +216,12 @@ package com.litefeel.videoPlayer
 			controlBar.addEventListener(VideoPlayerEvent.PLAY_NEXT, controlBarHandler);
 			controlBar.addEventListener(VideoPlayerEvent.CHANGE_VOLUME, controlBarHandler);
 			
+			
 			addChild(video);
 			addChild(controlBar);
 			addChild(loading);
 			addChild(adPanel);
+			addChild(frontLayer);
 		}
 		
 		private function controlBarHandler(e:VideoPlayerEvent):void 
@@ -289,6 +299,9 @@ package com.litefeel.videoPlayer
 			
 			var viewW:Number = stage.stageWidth;
 			var viewH:Number = stage.stageHeight - controlBar.height;
+			
+			frontLayer.width = viewW;
+			frontLayer.height = viewH;
 			
 			loading.x = viewW >> 1;
 			loading.y = viewH >> 1;
