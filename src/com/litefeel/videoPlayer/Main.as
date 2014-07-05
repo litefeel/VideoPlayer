@@ -141,6 +141,7 @@ package com.litefeel.videoPlayer
 				}else
 				{
 					controlBar.setEnabled(true);
+					video.visible = true;
 				}
 				video.attachNetStream(streamManager.getCurStream().getNetStream());
 				break;
