@@ -11,3 +11,5 @@ VideoPlayer 是使用flash技术开发的视频播放器。
 4. 视频集连播
 
 
+#### demo
+[demo](http://lite3.github.io/VideoPlayer/demo/)
