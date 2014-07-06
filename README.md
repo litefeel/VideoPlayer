@@ -10,6 +10,8 @@ VideoPlayer 是使用flash技术开发的视频播放器。
 3. 分段视频播放
 4. 视频集连播
 
+#### 配置格式
+[config.xml](https://github.com/lite3/VideoPlayer/wiki/config.xml)
 
 #### demo
 [demo](http://lite3.github.io/VideoPlayer/demo/)
